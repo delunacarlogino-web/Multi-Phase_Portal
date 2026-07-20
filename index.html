@@ -1,1 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Href Navigation</title>
+    <!-- Include Bootstrap 5 CSS via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+    body {
+        background: radial-gradient(circle at 0% 0%, #eba89a 0%, #df998a 75%, #dd8f7d 100%);
+    }
+</style>
+<body class="bg-light py-5">
 
+
+<div class="container" style="max-width: 600px;">
+    
+    <div class="d-flex justify-content-between mb-4 text-center fw-bold">
+        <span id="part1Indicator" class="text-primary border-bottom border-3 border-primary pb-1 flex-fill">1. Full Name</span>
+        <span id="part2Indicator" class="text-muted pb-1 flex-fill">2. Address Blocks</span>
+        <span id="part3Indicator" class="text-muted pb-1 flex-fill">3. Final Summary</span>
+    </div>
+
+    
+
+
+    <div class="card shadow-sm border border-dark">
+        <div class="card-header bg-dark text-light text-center">
+            <h2 class="h3 fw-bold p-2 text-uppercase">Employee Registration Portal</h2>
+        </div>
+        <div class="card-body p-4">
+            <!-- Simple Error Display Box -->
+            <div id="errorAlert" class="alert alert-danger d-none py-2 mb-3"></div>
+
+
+            <!-- ================= PHASE 1 ================= -->
+            <div id="phase1">
+                <h3 class="h6 mb-3 fw-bold text-primary text-uppercase">STEP 1: Personal Information</h3>
+
+                <label class="form-label small fw-bold">First Name <span class="text-danger text-bold">*</span></label>
+                <input type="text" id="firstName" class="form-control mb-3" placeholder="John">
+
+                <label class="form-label small fw-bold">Middle Name</label>
+                <input type="text" id="middleName" class="form-control mb-3" placeholder="T.">
+
+                <label class="form-label small fw-bold">Last Name <span class="text-danger text-bold">*</span></label>
+                <input type="text" id="lastName" class="form-control mb-3" placeholder="Pork">
+
+                <label class="form-label small fw-bold">Extension Name</label>
+                <input type="text" id="extName" class="form-control mb-3" placeholder="Jr.">
+
+                <label class="form-label small fw-bold">Age <span class="text-danger text-bold">*</span></label>
+                <input type="number" id="age" class="form-control mb-3" placeholder="69">
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="form-label small fw-bold">Gender <span class="text-danger text-bold">*</span></label><br>
+                        <select id="gender" value="male" class="form-select">
+                            <option value="" selected disabled>Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    <div class="mb-3 col-md-6">
+                        <label class="form-label small fw-bold">Birthday <span class="text-danger text-bold">*</span></label>
+                        <input type="date" id="birthday" class="form-control">
+                    </div>
+                </div>
+                <a href="#phase2" id="phaseTwo" class="btn btn-primary w-100 fw-bold">Next Step</a>
+            </div>
+
+
+            <!-- ================= PHASE 2 ================= -->
+            <div id="phase2" class="d-none">
+                <h3 class="h6 mb-3 fw-bold text-primary text-uppercase">STEP 2: Residential Address</h3>
+
+                <label class="form-label small fw-bold">Current Address <span class="text-danger text-bold">*</span></label>
+                <input type="text" id="currentAddress" class="form-control mb-3" placeholder="Enter current address here...">
+
+                <label class="form-label small fw-bold">Permanent Address <span class="text-danger text-bold">*</span></label>
+                <input type="text" id="permanentAddress" class="form-control mb-3" placeholder="Enter permanent address here...">
+                
+                <a href="#phaseThree" id="phaseThree" class="btn btn-success w-100 fw-bold">Finish Setup</a>
+            </div>
+
+
+            <!-- ================= PHASE 3 ================= -->
+            <div id="phase3" class="d-none">
+                <h3 class="h6 mb-3 fw-bold text-success text-uppercase">STEP 3: Profile</h3>
+                <div class="bg-light p-3 border rounded mb-3">
+                    <p class="mb-1"><strong>Processed Corporate Name:</strong></p>
+                    <p id="previewName" class="text-dark bg-white p-2 border rounded font-monospace">--</p>
+
+                    <p class="mb-1"><strong>Other Personal Information:</strong></p>
+                    <p id="previewInfo" class="text-dark bg-white p-2 border rounded font-monospace">--</p>
+                    
+                    <p class="mb-1 mt-3"><strong>Current Registered Address:</strong></p>
+                    <p id="previewCurrent" class="text-dark bg-white p-2 border rounded font-monospace">--</p>
+                    
+                    <p class="mb-1 mt-3"><strong>Permanent Registered Address:</strong></p>
+                    <p id="previewPermanent" class="text-dark bg-white p-2 border rounded font-monospace">--</p>
+                </div>
+                
+                <a href="#phase1" id="btnReset" class="btn btn-outline-secondary w-100 fw-bold">Restart</a>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<script src="app.js" defer></script>
+</body>
+</html>
